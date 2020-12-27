@@ -1,0 +1,69 @@
+{
+    "name": "kater/gamification",
+    "description": "Upvotes and downvotes for your Flarum community",
+    "keywords": [
+        "flarum",
+        "friendsofflarum",
+        "misc",
+        "settings",
+        "points",
+        "gamification"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Lopez",
+            "email": "Christian.Lopez@redevs.org",
+            "homepage": "https://redevs.org"
+        },
+        {
+            "name": "Charlie K",
+            "email": "Charlie.K@redevs.org",
+            "homepage": "https://redevs.org"
+        },
+        {
+            "name": "David Sevilla Martin",
+            "email": "me+fof@datitisev.me",
+            "homepage": "https://datitisev.me"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FriendsOfFlarum/gamification/issues",
+        "source": "https://github.com/FriendsOfFlarum/gamification",
+        "forum": "https://discuss.flarum.org/d/20671"
+    },
+    "homepage": "https://friendsofflarum.org",
+    "funding": [
+        {
+            "type": "website",
+            "url": "https://opencollective.com/fof/donate"
+        }
+    ],
+    "require": {
+        "kater/core": ">=0.1.0-beta.15 <0.1.0-beta.16",
+        "kater/extend": ">=0.3.1"
+    },
+    "replace": {
+        "reflar/gamification": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FoF\\Gamification\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "FoF Gamification",
+            "category": "discussion",
+            "icon": {
+                "name": "fas fa-thumbs-up",
+                "backgroundColor": "#e74c3c",
+                "color": "#fff"
+            }
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/20671-friendsofflarum-gamification"
+        }
+    }
+}
