@@ -33,6 +33,8 @@ app.initializers.add('fof-gamification', (app) => {
     Post.prototype.canSeeVotes = Model.attribute('canSeeVotes');
     Post.prototype.hasUpvoted = Model.attribute('hasUpvoted');
     Post.prototype.hasDownvoted = Model.attribute('hasDownvoted');
+    Post.prototype.upPoints = Model.attribute('upPoints');
+    Post.prototype.downPoints = Model.attribute('downPoints');
 
     app.store.models.ranks = Rank;
 

@@ -39,7 +39,7 @@ export default function () {
             'votes',
             <div className={`CommentPost-votes ${setting('useAlternateLayout', true) && 'alternateLayout'}`}>
                 {Button.component({
-                    icon: this.voteLoading || `fas fa-${icon}-up`,
+                    //icon: this.voteLoading || `fas fa-${icon}-up`,
                     className: 'Post-vote Post-upvote',
                     style: hasUpvoted && {
                         color: app.forum.attribute('themePrimaryColor'),
@@ -47,12 +47,12 @@ export default function () {
                     loading: this.voteLoading,
                     disabled: this.voteLoading || !canVote,
                     onclick: () => saveVote(post, !hasUpvoted, false, (val) => (this.voteLoading = val)),
-                })}
+                },'推')}
 
-                <label className="Post-points">{post.votes()}</label>
+                <label className="Post-upPoints">{post.upPoints()}</label>
 
                 {Button.component({
-                    icon: this.voteLoading || `fas fa-${icon}-down`,
+                    //icon: this.voteLoading || `fas fa-${icon}-down`,
                     className: 'Post-vote Post-downvote',
                     style: hasDownvoted && {
                         color: app.forum.attribute('themePrimaryColor'),
@@ -60,7 +60,10 @@ export default function () {
                     loading: this.voteLoading,
                     disabled: !canVote,
                     onclick: () => saveVote(post, false, !hasDownvoted, (val) => (this.voteLoading = val)),
-                })}
+                },'噓')}
+
+                <label className="Post-downPoints">{post.downPoints()}</label>
+
             </div>,
             10
         );

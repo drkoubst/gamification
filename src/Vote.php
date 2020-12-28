@@ -93,4 +93,28 @@ class Vote extends AbstractModel
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function upPoints($paramsOrQuery)
+    {
+        $query = $paramsOrQuery;
+        if (is_array($paramsOrQuery)) {
+            $query = self::query()
+                ->where($paramsOrQuery)
+                ->where('value', '>', 0);
+        }
+
+        return $query->count();
+    }
+
+    public static function downPoints($paramsOrQuery)
+    {
+        $query = $paramsOrQuery;
+        if (is_array($paramsOrQuery)) {
+            $query = self::query()
+                ->where($paramsOrQuery)
+                ->where('value', '<', 0);
+        }
+
+        return $query->count();
+    }
 }
