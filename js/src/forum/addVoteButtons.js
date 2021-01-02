@@ -49,7 +49,7 @@ export default function () {
                     onclick: () => saveVote(post, !hasUpvoted, false, (val) => (this.voteLoading = val)),
                 },'推')}
 
-                <label className="Post-upPoints">{post.upPoints()}</label>
+                <label className="Post-upPoints">{post.upPoints()?post.upPoints():'-'}</label>
 
                 {Button.component({
                     //icon: this.voteLoading || `fas fa-${icon}-down`,
@@ -58,11 +58,11 @@ export default function () {
                         color: app.forum.attribute('themePrimaryColor'),
                     },
                     loading: this.voteLoading,
-                    disabled: !canVote,
+                    disabled: this.voteLoading || !canVote,
                     onclick: () => saveVote(post, false, !hasDownvoted, (val) => (this.voteLoading = val)),
                 },'噓')}
 
-                <label className="Post-downPoints">{post.downPoints()}</label>
+                <label className="Post-downPoints">{post.downPoints()>=2?post.downPoints():'-'}</label>
 
             </div>,
             10
