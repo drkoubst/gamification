@@ -41,7 +41,7 @@
         }
     ],
     "require": {
-        "kater/core": ">=0.1.0-beta.15 <0.1.0-beta.16",
+        "kater/core": ">=0.1.0-beta.15",
         "kater/extend": ">=0.3.1"
     },
     "replace": {
