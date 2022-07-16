@@ -41,8 +41,7 @@
         }
     ],
     "require": {
-        "kater/core": ">=0.1.0-beta.15",
-        "kater/extend": ">=0.3.1"
+ "flarum/core": "^1.3",
     },
     "replace": {
         "reflar/gamification": "*"
